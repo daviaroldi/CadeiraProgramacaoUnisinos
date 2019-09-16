@@ -8,6 +8,10 @@ public class Consultor extends Usuario{
     public Consultor(String nome, String cpf, String username, String password) {
         super(nome, cpf, username, password);
     }
+    
+    public void createCarteira() {
+    	this.carteira = new Carteira();
+    }
 
     public Carteira getCarteira() {
         return carteira;
