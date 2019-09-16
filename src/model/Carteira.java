@@ -3,8 +3,12 @@ package model;
 import java.util.List;
 
 public class Carteira {
-    private int id;
-    private List<Proposta> propostas;
+	private int id;
+	private List<Proposta> propostas;
+
+	public int getId() {
+		return id;
+	}
 
     public List<Proposta> getPropostas() { return this.propostas; }
 
