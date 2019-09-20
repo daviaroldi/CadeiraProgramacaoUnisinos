@@ -1,22 +1,22 @@
-Padr√µes a serem implementados no exerc√≠cio
+Padrıes a serem implementados no exercÌcio
 
 * Information Expert
-	* Significado: Consiste em atribuir responsabilidades a quem tem a informa√ß√£o necess√°ria
+	* Significado: Consiste em atribuir responsabilidades a quem tem a informaÁ„o necess·ria
 
 * Low Coupling
-	* Significado: Atribuir responsabilidade de forma a manter o acoplamento (desnecess√°rio) baixo.
+	* Significado: Atribuir responsabilidade de forma a manter o acoplamento (desnecess·rio) baixo.
 
 * Creator
-	* Significado: A classe "B" deve ser respons√°vel por criar uma inst√¢ncia de "A", se:
+	* Significado: A classe "B" deve ser respons·vel por criar uma inst‚ncia de "A", se:
 		* "B" agrega objetos da classe"A"
-		* "B" cont√©m objetos de "A"
-		* "B" armazena inst√¢ncias de "A"
-		* "B", de forma privada, usa inst√¢ncias de "A"
-		* "B" tem os dados necess√°rios para inicializar "A"
+		* "B" contÈm objetos de "A"
+		* "B" armazena inst‚ncias de "A"
+		* "B", de forma privada, usa inst‚ncias de "A"
+		* "B" tem os dados necess·rios para inicializar "A"
 
 * Controller
-	* Significado: Atribuir a responsabilidade de uma classe que represente todo o sistema ou represente os servi√ßos de um m√≥dulo
-ou subsistema. √â a classe ra√≠z do sistema/m√≥dulo.
+	* Significado: Atribuir a responsabilidade de uma classe que represente todo o sistema ou represente os serviÁos de um mÛdulo
+ou subsistema. … a classe raÌz do sistema/mÛdulo.
 
 * High Cohesion
-	* Significado: Atribuir responsabilidade de forma a manter a coes√£o funcional alta.
+	* Significado: Atribuir responsabilidade de forma a manter a coes„o funcional alta.
