@@ -3,39 +3,29 @@ package model;
 import java.util.List;
 
 public class Consultor extends Usuario{
-    private Carteira carteira;
+    private List<Proposta> propostas;
 
     public Consultor(String nome, String cpf, String username, String password) {
         super(nome, cpf, username, password);
     }
-    
-    public void createCarteira() {
-    	this.carteira = new Carteira();
-    }
-
-    public Carteira getCarteira() {
-        return carteira;
-    }
-
-    public void setCarteira(Carteira carteira) {
-        this.carteira = carteira;
-    }
 
     public void addProposta(Proposta proposta) {
     	if (proposta != null) {
-    		this.carteira.addProposta(proposta);
+    		this.propostas.add(proposta);
     	}
     }
     
-    public List<Proposta> getPropostas() { return this.carteira.getPropostas(); }
+    public List<Proposta> getPropostas() { return this.propostas; }
 
     public void removeProposta(Proposta proposta) {
         if (proposta != null) {
-            this.carteira.removeProposta(proposta);
+        	if (this.propostas.indexOf(proposta) != -1) {
+        		this.propostas.remove(this.propostas.indexOf(proposta));
+        	}
         }
     }
 
     public void cleanPropostas() {
-        this.carteira.cleanPropostas();
+        this.propostas.clear();
     }
 }
