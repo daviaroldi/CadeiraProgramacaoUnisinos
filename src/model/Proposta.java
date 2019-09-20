@@ -11,6 +11,7 @@ public class Proposta {
     private Date dataEmissao;
     private String convenio;
     private String matriculaConvenio;
+    private Contrato contrato;
 
     public Proposta(double valor, String status, Cliente cliente, Banco banco, Date dataEmissao, String convenio, String matriculaConvenio) {
         this.valor = valor;
@@ -85,4 +86,12 @@ public class Proposta {
     public void changeProposta() {
         //TODO
     }
+
+	public Contrato getContrato() {
+		return contrato;
+	}
+
+	public void setContrato(Contrato contrato) {
+		this.contrato = contrato;
+	}
 }
