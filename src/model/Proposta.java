@@ -5,22 +5,41 @@ import java.util.Date;
 public class Proposta {
     private int id;
     private double valor;
-    private String status;
+    private String status = "NOK";
     private Cliente cliente;
-    private Banco banco;
+    private Banco banco = null;
     private Date dataEmissao;
     private String convenio;
     private String matriculaConvenio;
     private Contrato contrato;
 
-    public Proposta(double valor, String status, Cliente cliente, Banco banco, Date dataEmissao, String convenio, String matriculaConvenio) {
+    public Proposta(double valor, Cliente cliente, Date dataEmissao, String convenio, String matriculaConvenio) {
+    	
+    	//TODO fazer validações automáticas aqui (criar método)
+    	
         this.valor = valor;
-        this.status = status;
+        
+        //TODO remover cliente do construtor? estamos criando dependencia com essa classe para quem instanciar Proposta
+        //Ao mesmo tempo, talvez seja bom a classe cliente ser conhecida, pois ela é um dos pilares do sistema
         this.cliente = cliente;
-        this.banco = banco;
+        
         this.dataEmissao = dataEmissao;
         this.convenio = convenio;
         this.matriculaConvenio = matriculaConvenio;
+    }
+    
+    public void criaContrato (String texto, String assinaturaEletronica) {
+    	Contrato contrato = new Contrato(texto, assinaturaEletronica);
+    	this.contrato = contrato;
+    }
+    
+    public void associaBanco (String nome, String agencia, String conta) {
+    	Banco banco = new Banco (nome, agencia, conta);
+    	this.banco = banco;
+    }
+    
+    public String getTextoContrato () {
+    	return this.contrato.getTexto();
     }
 
     public int getId() {
@@ -51,14 +70,6 @@ public class Proposta {
         this.cliente = cliente;
     }
 
-    public Banco getBanco() {
-        return banco;
-    }
-
-    public void setBanco(Banco banco) {
-        this.banco = banco;
-    }
-
     public Date getDataEmissao() {
         return dataEmissao;
     }
@@ -83,15 +94,4 @@ public class Proposta {
         this.matriculaConvenio = matriculaConvenio;
     }
 
-    public void changeProposta() {
-        //TODO
-    }
-
-	public Contrato getContrato() {
-		return contrato;
-	}
-
-	public void setContrato(Contrato contrato) {
-		this.contrato = contrato;
-	}
 }

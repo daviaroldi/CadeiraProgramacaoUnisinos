@@ -14,6 +14,7 @@ public class Usuario {
     private String password;
 
     public Usuario(String nome, String cpf, String username, String password) {
+    	//TODO criar classe que controla a criação de IDs de usuário
         this.nome = nome;
         this.cpf = cpf;
         this.username = username;

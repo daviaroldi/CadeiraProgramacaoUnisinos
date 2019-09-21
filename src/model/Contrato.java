@@ -1,16 +1,14 @@
 package model;
 
 public class Contrato {
-	private int id;
 	private String texto;
 	private String assinaturaEletronica;
 	
-	public int getId() {
-		return id;
+	public Contrato (String texto, String assinaturaEletronica) {
+		this.texto = texto;
+		this.assinaturaEletronica = assinaturaEletronica;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public String getTexto() {
 		return texto;
 	}

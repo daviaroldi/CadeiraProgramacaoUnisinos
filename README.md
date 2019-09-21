@@ -1,22 +1,20 @@
-Padrões a serem implementados no exercício
+Padrões utilizados no código:
 
-* Information Expert
-	* Significado: Consiste em atribuir responsabilidades a quem tem a informação necessária
+Creator:
+	Foi utilizado o padrão Creator nas classes Consultor e Analista. Elas possuem como um dos atributos uma lista de objetos da classe Proposta. Dessa forma, elas têm o conhecimento de como criar
+	uma proposta. A classe que instanciar um objeto das classes Consultor ou Analista não precisa ter uma dependência com a classe Proposta. 
+	Assim, o método addProposta recebe apenas as informações e ele é o responsável por instanciar o objeto Proposta.
+	
+Controller:
+	Foi utilizado o padrão controller através da classe AnalistaController. A ideia é que ela seja possua métodos responsáveis por criar a instância de Analista para adicionar propostas a ela.
+	Esses serão os métodos utilizados por qualquer interface que queira interagir com essa parte do sistema. No exemplo, utilizamos a linha de comando.
+	
+Information Expert:
+	Esse padrão podemos perceber na relação entre a classe Proposta e a classe Contrato. Quem possuir uma instância da classe Proposta não conhece a classe Contrato. Para obter o texto de um contrato,
+	a classe Proposta disponibiliza o método getTextoContrato, quem é o responsável por obtê-lo a partir da instância privada de Contrato que a classe possui.
 
-* Low Coupling
-	* Significado: Atribuir responsabilidade de forma a manter o acoplamento (desnecessário) baixo.
+High Cohesion:
+	Esse padrão será demonstrado em uma classe específica que salva a proposta (onde quer que seja). Com isso, não deixamos a clase Proposta com mais de uma responsabilidade.
 
-* Creator
-	* Significado: A classe "B" deve ser responsável por criar uma instância de "A", se:
-		* "B" agrega objetos da classe"A"
-		* "B" contém objetos de "A"
-		* "B" armazena instâncias de "A"
-		* "B", de forma privada, usa instâncias de "A"
-		* "B" tem os dados necessários para inicializar "A"
-
-* Controller
-	* Significado: Atribuir a responsabilidade de uma classe que represente todo o sistema ou represente os serviços de um módulo
-ou subsistema. É a classe raíz do sistema/módulo.
-
-* High Cohesion
-	* Significado: Atribuir responsabilidade de forma a manter a coesão funcional alta.
+Low Coupling:
+	Tentamos deixar o mínimo de acoplamento possível no código. Podemos ver que as responsabilidaddes estão bem distribuídas.

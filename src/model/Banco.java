@@ -1,18 +1,14 @@
 package model;
 
 public class Banco {
-    private int id;
-    private String agencia;
     private String nome;
+	private String agencia;
+	private String conta;
 
-    public Banco(String agencia, String nome) {
-//        this.id = id;
+    public Banco(String nome, String agencia, String conta) {
         this.agencia = agencia;
         this.nome = nome;
-    }
-
-    public int getId() {
-        return id;
+        this.setConta(conta);
     }
 
     public String getAgencia() {
@@ -30,4 +26,12 @@ public class Banco {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+	public String getConta() {
+		return conta;
+	}
+
+	public void setConta(String conta) {
+		this.conta = conta;
+	}
 }
