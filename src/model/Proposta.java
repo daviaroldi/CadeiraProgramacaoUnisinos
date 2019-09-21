@@ -1,19 +1,21 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.UUID;
 
 public class Proposta {
-    private int id;
+    private String id;
     private double valor;
     private String status = "NOK";
     private Cliente cliente;
     private Banco banco = null;
-    private Date dataEmissao;
+    private LocalDate dataEmissao;
     private String convenio;
     private String matriculaConvenio;
     private Contrato contrato;
 
-    public Proposta(double valor, Cliente cliente, Date dataEmissao, String convenio, String matriculaConvenio) {
+    public Proposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) {
     	
     	//TODO fazer validações automáticas aqui (criar método)
     	
@@ -26,6 +28,8 @@ public class Proposta {
         this.dataEmissao = dataEmissao;
         this.convenio = convenio;
         this.matriculaConvenio = matriculaConvenio;
+        
+        this.id = java.util.UUID.randomUUID().toString();
     }
     
     public void criaContrato (String texto, String assinaturaEletronica) {
@@ -42,7 +46,7 @@ public class Proposta {
     	return this.contrato.getTexto();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -70,11 +74,11 @@ public class Proposta {
         this.cliente = cliente;
     }
 
-    public Date getDataEmissao() {
+    public LocalDate getDataEmissao() {
         return dataEmissao;
     }
 
-    public void setDataEmissao(Date dataEmissao) {
+    public void setDataEmissao(LocalDate dataEmissao) {
         this.dataEmissao = dataEmissao;
     }
 

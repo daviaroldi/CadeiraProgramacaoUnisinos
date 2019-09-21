@@ -1,17 +1,18 @@
 package model;
 
+import java.util.Date;
+
 public class Documento {
-    private int id;
     private String tipo;
-    private String path;
+    private String numero;
+    private String orgaoEmissor;
+    private Date dataEmissao;
 
-    public Documento(String tipo, String path) {
+    public Documento(String tipo, String numero, String orgaoEmissor, Date dataEmissao) {
         this.tipo = tipo;
-        this.path = path;
-    }
-
-    public int getId() {
-        return id;
+        this.setNumero(numero);
+        this.setOrgaoEmissor(orgaoEmissor);
+        this.setDataEmissao(dataEmissao);
     }
 
     public String getTipo() {
@@ -22,11 +23,27 @@ public class Documento {
         this.tipo = tipo;
     }
 
-    public String getPath() {
-        return path;
-    }
+	public String getNumero() {
+		return numero;
+	}
 
-    public void setPath(String path) {
-        this.path = path;
-    }
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getOrgaoEmissor() {
+		return orgaoEmissor;
+	}
+
+	public void setOrgaoEmissor(String orgaoEmissor) {
+		this.orgaoEmissor = orgaoEmissor;
+	}
+
+	public Date getDataEmissao() {
+		return dataEmissao;
+	}
+
+	public void setDataEmissao(Date dataEmissao) {
+		this.dataEmissao = dataEmissao;
+	}
 }

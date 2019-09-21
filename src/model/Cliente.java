@@ -1,30 +1,81 @@
 package model;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 public class Cliente {
     private List<Documento> documentos;
-    private HashMap<String, String> dados;
+    private String nome;
+    private char sexo;
+    private LocalDate dataNascimento;
+    private String cpf;
+    private String nomeMae;
+    private Contato contato;
+    private Endereco endereco;
 
-    public Cliente(List<Documento> documentos, HashMap<String, String> dados) {
-        this.documentos = documentos;
-        this.dados = dados;
+    public Cliente(String nome, char sexo, LocalDate dataNascimento, String cpf, String nomeMae) {
+    	this.nome = nome;
+    	this.sexo = sexo;
+    	this.dataNascimento = dataNascimento;
+    	this.setCpf(cpf);
+    	this.setNomeMae(nomeMae);
     }
 
-    public List<Documento> getDocumentos() {
-        return documentos;
+    public void adicionaDocumento (String tipo, String numero, String orgaoEmissor, Date dataEmissao) {
+    	Documento documento = new Documento (tipo, numero, orgaoEmissor, dataEmissao);
+    	this.documentos.add(documento);
+    }
+    
+    public void adicionaEndereco (String cep, String rua, int numero, String complemento) {
+    	Endereco endereco = new Endereco (cep, rua, numero, complemento);
+    	this.endereco = endereco;
+    }
+    
+    public void adicionaContato (String email, String telefone) {
+    	Contato contato = new Contato (email, telefone);
+    	this.contato = contato;
     }
 
-    public void setDocumentos(List<Documento> documentos) {
-        this.documentos = documentos;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public HashMap<String, String> getDados() {
-        return dados;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public void setDados(HashMap<String, String> dados) {
-        this.dados = dados;
-    }
+	public char getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getNomeMae() {
+		return nomeMae;
+	}
+
+	public void setNomeMae(String nomeMae) {
+		this.nomeMae = nomeMae;
+	}
+    
 }

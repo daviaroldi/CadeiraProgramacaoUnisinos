@@ -1,5 +1,6 @@
 package controller;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import model.Analista;
@@ -19,7 +20,7 @@ public class AnalistaController {
 		this.analista.printInfo();
 	}
 	
-	public void adicionaProposta (double valor, Cliente cliente, Date dataEmissao, String convenio, String matriculaConvenio) {
+	public void adicionaProposta (double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) {
 		if (analista != null) {
 			analista.adicionaProposta(valor, cliente, dataEmissao, convenio, matriculaConvenio);
 		}
