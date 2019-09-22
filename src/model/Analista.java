@@ -10,7 +10,7 @@ public class Analista extends Usuario{
     private int matriculaBemPromotora;
 
     public Analista(String nome, String cpf, String username, String password, int matriculaBemPromotora) {
-        super(nome, cpf, username, password);
+        super(nome, cpf, true, username, password);
         this.matriculaBemPromotora = matriculaBemPromotora;
     }
 

@@ -9,7 +9,7 @@ public class Consultor extends Usuario{
 	private List<Proposta> propostas = new ArrayList<Proposta>();
 
     public Consultor(String nome, String cpf, String username, String password) {
-        super(nome, cpf, username, password);
+        super(nome, cpf, false, username, password);
     }
 
     public void addProposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) {

@@ -6,22 +6,24 @@ import java.security.SecureRandom;
 import java.security.spec.KeySpec;
 
 public class Usuario {
-    private int id;
+    private String id;
     private String nome;
     private String cpf;
     private boolean administrador;
     private String username;
     private String password;
 
-    public Usuario(String nome, String cpf, String username, String password) {
-    	//TODO criar classe que controla a criação de IDs de usuário
+    public Usuario(String nome, String cpf, boolean administrador, String username, String password) {
         this.nome = nome;
         this.cpf = cpf;
+        this.administrador = administrador;
         this.username = username;
         this.setPassword(password);
+        
+        this.id = java.util.UUID.randomUUID().toString();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -57,6 +59,7 @@ public class Usuario {
         this.username = username;
     }
 
+    //TODO analisar se faz sentido existir esse metodo como publico
     public String getPassword() {
         return password;
     }
