@@ -6,6 +6,7 @@ import java.util.Date;
 import model.Analista;
 import model.Banco;
 import model.Cliente;
+import model.SalvaAnalista;
 
 public class AnalistaController {
 	private Analista analista = null;
@@ -13,7 +14,8 @@ public class AnalistaController {
 	public void criaAnalista (String nome, String cpf, String username, String password, int matriculaBemPromotora) {
 		analista = new Analista(nome, cpf, username, password, matriculaBemPromotora);
 		
-		//TODO chamar classe que salva no BD
+		SalvaAnalista salvaAnalista = new SalvaAnalista();
+		salvaAnalista.salvaAnalista(analista);
 	}
 
 	public void printInfo() {

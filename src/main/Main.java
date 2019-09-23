@@ -1,6 +1,7 @@
 package main;
 
 import java.io.InputStream;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import controller.AnalistaController;
@@ -32,9 +33,34 @@ public class Main {
 		
 		analista.printInfo();
 		
-		//TODO adicionar proposta ao analista
+		System.out.println("Adicionando um cliente ao analista");
+		System.out.println("Digite o nome");
+		String nomeCliente = input.nextLine();
+		System.out.println("Digite o sexo (m/f)");
+		char sexoCliente = input.next().charAt(0);
+		System.out.println("Digite o dia de nascimento");
+		int diaNascimentoCliente = input.nextInt();
+		System.out.println("Digite o mês de nascimento");
+		int mesNascimentoCliente = input.nextInt();
+		System.out.println("Digite o ano de nascimento");
+		int anoNascimentoCliente = input.nextInt();
+		LocalDate dataNascimentoCliente = LocalDate.of(anoNascimentoCliente, mesNascimentoCliente, diaNascimentoCliente);
+		System.out.println("Digite o cpf");
+		String cpfCliente = input.nextLine();
+		System.out.println("Digite o nome da mãe");
+		String nomeMaeCliente = input.nextLine();
 		
-		//TODO adicionar criações de cliente
+		Cliente cliente = new Cliente (nomeCliente, sexoCliente, dataNascimentoCliente, cpfCliente, nomeMaeCliente);
+		
+		System.out.println("Adicionando uma proposta do cliente");
+		LocalDate dataEmissao = LocalDate.now();
+		System.out.println("Digite o valor");
+		int valorProposta = input.nextInt();
+		System.out.println("Digite o convenio");
+		String convenio = input.nextLine();
+		System.out.println("Digite a matricula do convenio");
+		String matriculaConvenio = input.nextLine();
+		analista.adicionaProposta(valorProposta, cliente, dataEmissao, convenio, matriculaConvenio);
 
 	}
 

@@ -19,8 +19,8 @@ public class Cliente {
     	this.nome = nome;
     	this.sexo = sexo;
     	this.dataNascimento = dataNascimento;
-    	this.setCpf(cpf);
-    	this.setNomeMae(nomeMae);
+    	this.cpf = cpf;
+    	this.nomeMae = nomeMae;
     }
 
     public void adicionaDocumento (String tipo, String numero, String orgaoEmissor, Date dataEmissao) {

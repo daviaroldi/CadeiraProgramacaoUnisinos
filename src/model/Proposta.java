@@ -8,12 +8,12 @@ public class Proposta {
     private String id;
     private double valor;
     private String status = "NOK";
-    private Cliente cliente;
+    private Cliente cliente = null;
     private Banco banco = null;
     private LocalDate dataEmissao;
     private String convenio;
     private String matriculaConvenio;
-    private Contrato contrato;
+    private Contrato contrato = null;
 
     public Proposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) {
     	
