@@ -16,7 +16,7 @@ public class Analista extends Usuario{
 
     public List<Proposta> getPropostas() { return this.propostas; }
 
-    public String adicionaProposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) {
+    public String adicionaProposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) throws Exception {
     	Proposta proposta = new Proposta(valor, cliente, dataEmissao, convenio, matriculaConvenio);
     	propostas.add(proposta);
     	
