@@ -12,10 +12,14 @@ public class AnalistaController {
 	private Analista analista = null;
 	
 	public void criaAnalista (String nome, String cpf, String username, String password, int matriculaBemPromotora) {
+		try {
 		analista = new Analista(nome, cpf, username, password, matriculaBemPromotora);
 		
 		SalvaAnalista salvaAnalista = new SalvaAnalista();
 		salvaAnalista.salvaAnalista(analista);
+		} catch (Exception e) {
+			System.out.println("Erro ao criar analista: "+ e.getMessage());
+		}
 	}
 
 	public void printInfo() {
@@ -23,8 +27,12 @@ public class AnalistaController {
 	}
 	
 	public void adicionaProposta (double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) {
+		try {
 		if (analista != null) {
 			analista.adicionaProposta(valor, cliente, dataEmissao, convenio, matriculaConvenio);
+		}
+		} catch (Exception e) {
+			System.out.println("Erro ao adicionar proposta: "+ e.getMessage());
 		}
 	}
 }

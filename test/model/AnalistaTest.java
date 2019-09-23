@@ -26,7 +26,7 @@ class AnalistaTest {
 	}
 
 	@Test
-	void testAdicionaProposta() {
+	void testAdicionaProposta() throws Exception {
 		LocalDate dataNascimentoCliente = LocalDate.of(1986, 11, 14);
 		Cliente cliente = new Cliente ("joao", 'm', dataNascimentoCliente, "0064932055", "maria");
 		LocalDate dataEmissao = LocalDate.of(2019, 9, 21);

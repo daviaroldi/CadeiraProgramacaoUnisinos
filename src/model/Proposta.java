@@ -15,14 +15,14 @@ public class Proposta {
     private String matriculaConvenio;
     private Contrato contrato = null;
 
-    public Proposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) {
+    // Na criação de uma instância de Proposta, já são validadas as regras automáticas definidas pelo cliente.
+    public Proposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) throws Exception {
     	
-    	//TODO fazer validações automáticas aqui (criar método)
-    	
-        this.valor = valor;
-        
-        //TODO remover cliente do construtor? estamos criando dependencia com essa classe para quem instanciar Proposta
-        //Ao mesmo tempo, talvez seja bom a classe cliente ser conhecida, pois ela é um dos pilares do sistema
+    	if (!validaValor(valor)) {
+    		throw new Exception ("Valor da proposta fora dos limites!");
+    	}
+
+		this.valor = valor;
         this.cliente = cliente;
         
         this.dataEmissao = dataEmissao;
@@ -30,6 +30,15 @@ public class Proposta {
         this.matriculaConvenio = matriculaConvenio;
         
         this.id = java.util.UUID.randomUUID().toString();
+    }
+    
+    private boolean validaValor (double valor) {
+    	if (valor < 300 || valor > 60000) {
+    		return false;
+    	}
+    	
+		return true;
+    	
     }
     
     public void criaContrato (String texto, String assinaturaEletronica) {

@@ -15,12 +15,28 @@ public class Cliente {
     private Contato contato;
     private Endereco endereco;
 
-    public Cliente(String nome, char sexo, LocalDate dataNascimento, String cpf, String nomeMae) {
+    public Cliente(String nome, char sexo, LocalDate dataNascimento, String cpf, String nomeMae) throws Exception {
+    	
+    	if (validaIdade(dataNascimento)) {
+    		throw new Exception("Idade do cliente fora dos limites");
+    	}
+    	
     	this.nome = nome;
     	this.sexo = sexo;
     	this.dataNascimento = dataNascimento;
     	this.cpf = cpf;
     	this.nomeMae = nomeMae;
+    }
+    
+    private boolean validaIdade (LocalDate dataNascimento) {
+    	LocalDate dataAtual = LocalDate.now();
+    	int idade = dataAtual.getYear() - dataNascimento.getYear();
+    	
+    	if (idade < 18 || idade > 75) {
+    		return false;
+    	}
+    	
+    	return true;
     }
 
     public void adicionaDocumento (String tipo, String numero, String orgaoEmissor, Date dataEmissao) {
