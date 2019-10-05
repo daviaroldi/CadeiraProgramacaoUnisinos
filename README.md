@@ -1,22 +1,21 @@
-Padrıes utilizados no cÛdigo:
+Padr√µes utilizados no c√≥digo:
 
 Creator:
-	Foi utilizado o padr„o Creator nas classes Consultor e Analista. Elas possuem como um dos atributos uma lista de objetos da classe Proposta. Dessa forma, elas tÍm o conhecimento de como criar
-	uma proposta. A classe que instanciar um objeto das classes Consultor ou Analista n„o precisa ter uma dependÍncia com a classe Proposta. 
-	Assim, o mÈtodo addProposta recebe apenas as informaÁıes e ele È o respons·vel por instanciar o objeto Proposta.
+	Foi utilizado o padr√£o Creator nas classes Consultor e Analista. Elas possuem como um dos atributos uma lista de objetos da classe Proposta. Dessa forma, elas t√™m o conhecimento de como criar uma proposta. A classe que instanciar um objeto das classes Consultor ou Analista n√£o precisa ter uma depend√™ncia com a classe Proposta. 
+	Assim, o m√©todo addProposta recebe apenas as informa√ß√µes e ele √© o respons√°vel por instanciar o objeto Proposta.
 	Essa mesma abordagem foi utilizada na classe Cliente.
 	
 Controller:
-	Foi utilizado o padr„o controller atravÈs da classe AnalistaController. A ideia È que ela seja possua mÈtodos respons·veis por criar a inst‚ncia de Analista para adicionar propostas a ela.
-	Esses ser„o os mÈtodos utilizados por qualquer interface que queira interagir com essa parte do sistema. No exemplo, utilizamos a linha de comando.
+	Foi utilizado o padr√£o controller atrav√©s da classe AnalistaController. A ideia √© que ela possua m√©todos respons√°veis por criar a inst√¢ncia de Analista para adicionar propostas a ela.
+	Esses ser√£o os m√©todos utilizados por qualquer interface que queira interagir com essa parte do sistema. No exemplo, utilizamos a linha de comando.
 	
 Information Expert:
-	Esse padr„o podemos perceber na relaÁ„o entre a classe Proposta e a classe Contrato. Quem possuir uma inst‚ncia da classe Proposta n„o conhece a classe Contrato. Para obter o texto de um contrato,
-	a classe Proposta disponibiliza o mÈtodo getTextoContrato, quem È o respons·vel por obtÍ-lo a partir da inst‚ncia privada de Contrato que a classe possui.
+	Esse padr√£o podemos perceber na rela√ß√£o entre a classe Proposta e a classe Contrato. Quem possuir uma inst√¢ncia da classe Proposta n√£o conhece a classe Contrato. Para obter o texto de um contrato,
+	a classe Proposta disponibiliza o m√©todo getTextoContrato, quem √© o respons√°vel por obt√™-lo a partir da inst√¢ncia privada de Contrato que a classe possui.
 
 High Cohesion:
-	Esse padr„o È demonstrado na classe SalvaAnalista, cuja ˙nica responsabilidade È persistir a inst‚ncia de um analista. Isso retira essa tarefa da tarefa Analista, o que deixa o cÛdigo mais coeso.
-	A ideia È expandir esse pensamento para as demais classes.
+	Esse padr√£o √© demonstrado na classe SalvaAnalista, cuja √∫nica responsabilidade √© persistir a inst√¢ncia de um analista. Isso retira essa tarefa da tarefa Analista, o que deixa o c√≥digo mais coeso.
+	A ideia √© expandir esse pensamento para as demais classes.
 
 Low Coupling:
-	Tentamos deixar o mÌnimo de acoplamento possÌvel no cÛdigo. Podemos ver que as responsabilidaddes est„o bem distribuÌdas.
+	Tentamos deixar o m√≠nimo de acoplamento poss√≠vel no c√≥digo. Podemos ver que as responsabilidaddes est√£o bem distribu√≠das.
