@@ -12,7 +12,7 @@ public class Consultor extends Usuario{
         super(nome, cpf, false, username, password);
     }
 
-    public void addProposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) {
+    public void addProposta(double valor, Cliente cliente, LocalDate dataEmissao, String convenio, String matriculaConvenio) throws Exception {
     	Proposta proposta = new Proposta(valor, cliente, dataEmissao, convenio, matriculaConvenio);
     	propostas.add(proposta);
     }

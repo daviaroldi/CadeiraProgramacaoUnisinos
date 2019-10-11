@@ -17,7 +17,7 @@ public class Cliente {
 
     public Cliente(String nome, char sexo, LocalDate dataNascimento, String cpf, String nomeMae) throws Exception {
     	
-    	if (validaIdade(dataNascimento)) {
+    	if (!validaIdade(dataNascimento)) {
     		throw new Exception("Idade do cliente fora dos limites");
     	}
     	

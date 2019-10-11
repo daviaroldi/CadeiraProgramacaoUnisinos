@@ -63,7 +63,11 @@ public class Proposta {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(double valor) throws Exception {
+    	if (!validaValor(valor)) {
+    		throw new Exception ("Valor da proposta fora dos limites!");
+    	}
+    	
         this.valor = valor;
     }
 
